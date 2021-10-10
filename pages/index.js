@@ -12,6 +12,7 @@ import boxShotImage from "../public/boxshot.png";
 import mobileImage from "../public/mobile.jpeg";
 import devicePileImage from "../public/device-pile.png";
 import netflixKidsContentImage from "../public/netflix-kids-content.png";
+import { useSession, signIn, signOut } from "next-auth/client";
 
 export default function Home() {
   return (
@@ -26,6 +27,12 @@ export default function Home() {
         <Header />
         <Hero />
       </div>
+      <button className="text-white" onClick={() => signIn("github")}>
+        Sign in
+      </button>
+      <button className="text-white" onClick={() => signOut()}>
+        Sign out
+      </button>
       <ContentCard
         title="Enjoy on your TV."
         subtitle="Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more."
