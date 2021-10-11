@@ -15,6 +15,7 @@ import netflixKidsContentImage from "../public/netflix-kids-content.png";
 import { useSession, signIn, signOut } from "next-auth/client";
 
 export default function Home() {
+  const [session, loading] = useSession();
   return (
     <section className="bg-black">
       <div
@@ -27,12 +28,22 @@ export default function Home() {
         <Header />
         <Hero />
       </div>
-      <button className="text-white" onClick={() => signIn("github")}>
-        Sign in
-      </button>
-      <button className="text-white" onClick={() => signOut()}>
-        Sign out
-      </button>
+      <div className="text-white">
+
+      {!session && (
+        <>
+          Not signed in <br />
+          {/*<button onClick={() => signIn()}>Sign in</button>*/}
+          <button onClick={() => signIn("github")}>Sign in</button>
+        </>
+      )}
+      {session && (
+        <>
+          Signed in as {session.user.email} <br />
+          <button onClick={() => signOut()}>Sign out</button>
+        </>
+      )}
+      </div>
       <ContentCard
         title="Enjoy on your TV."
         subtitle="Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more."

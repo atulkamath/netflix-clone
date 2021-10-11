@@ -1894,6 +1894,11 @@ next@latest:
     "@next/swc-linux-x64-gnu" "11.1.2"
     "@next/swc-win32-x64-msvc" "11.1.2"
 
+node-bin-setup@^1.0.0:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/node-bin-setup/-/node-bin-setup-1.0.6.tgz#4b5c9bb937ece702d7069b36ca78af4684677528"
+  integrity sha512-uPIxXNis1CRbv1DwqAxkgBk5NFV3s7cMN/Gf556jSw6jBvV7ca4F9lRL/8cALcZecRibeqU+5dFYqFFmzv5a0Q==
+
 node-emoji@^1.11.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/node-emoji/-/node-emoji-1.11.0.tgz#69a0150e6946e2f115e9d7ea4df7971e2628301c"
@@ -1946,6 +1951,13 @@ node-releases@^1.1.71, node-releases@^1.1.77:
   version "1.1.77"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.77.tgz#50b0cfede855dd374e7585bf228ff34e57c1c32e"
   integrity sha512-rB1DUFUNAN4Gn9keO2K1efO35IDK7yKHCdCaIMvFO7yUYmmZYeDjnGKle26G4rwj+LKRQpjyUUvMkPglwGCYNQ==
+
+node@^14.17.0:
+  version "14.18.0"
+  resolved "https://registry.yarnpkg.com/node/-/node-14.18.0.tgz#22457e7e3baee85277da1364a8aeaacd6679dfcd"
+  integrity sha512-ho+MOL09f9W1lQ4ECUGv+2wuShttuZ6QnOIomhQ6ZQ2ZYovOCUtK0Z0796mnag2DZmA+v+R/4qsiXFnlMGBn3w==
+  dependencies:
+    node-bin-setup "^1.0.0"
 
 nodemailer@^6.4.16:
   version "6.6.5"
