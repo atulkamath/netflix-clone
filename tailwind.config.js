@@ -29,7 +29,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      div: ["odd"],
+      div: ["even"],
+      p: ["even"],
     },
   },
   plugins: [],

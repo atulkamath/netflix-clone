@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useSession, signIn, signOut } from "next-auth/client";
+import { Link } from "next/link";
 
 import Footer from "./Footer";
 
@@ -7,10 +9,12 @@ const SignInCard = () => {
   const handleChange = () => {
     setChecked(!checked);
   };
-
+  const [session, loading] = useSession();
   return (
     <div className="md:flex md:justify-center md:flex-col md:items-center ">
       <div className="flex text-white flex-col items-start rounded p-6 mb-20 md:items-start md:justify-center md:bg-black md:bg-opacity-50  md:pb-48 md:p-12 md:w-98  ">
+        <div className="text-white"></div>
+
         <h1 className=" font-bold text-4xl mb-6 items-start">Sign In</h1>
         <input
           className="w-11/12 h-12 p-4 bg-actual-gray rounded mb-4"
@@ -24,9 +28,23 @@ const SignInCard = () => {
           name="text-input"
           placeholder="Password"
         ></input>
-        <button className=" w-11/12 h-12 mt-8 mb-4 rounded text-white bg-red-600">
-          Sign In
-        </button>
+        {!session && (
+          <>
+            <button
+              className=" w-11/12 h-12 mt-8 mb-4 rounded text-white bg-red-600"
+              onClick={() => signIn("github")}
+            >
+              Sign in
+            </button>
+          </>
+        )}
+        {session && (
+          <>
+            Signed in as {session.user.email} <br />
+            <button onClick={() => signOut()}>Sign out</button>
+          </>
+        )}
+
         <div className="flex justify-between w-11/12 text-sm mb-2">
           <label>
             <input type="checkbox" checked={checked} onChange={handleChange} />

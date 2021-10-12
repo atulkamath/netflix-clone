@@ -17,33 +17,20 @@ import { useSession, signIn, signOut } from "next-auth/client";
 export default function Home() {
   const [session, loading] = useSession();
   return (
-    <section className="bg-black">
+    <section className="bg-black ">
       <div
-        className="bg-cover sm:h-screen"
+        className="bg-cover sm:h-screen "
         style={{
           "background-image":
             "linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url(/banner.jpg)",
         }}
       >
         <Header />
-        <Hero />
+        <div className="lg:p-24">
+          <Hero />
+        </div>
       </div>
-      <div className="text-white">
 
-      {!session && (
-        <>
-          Not signed in <br />
-          {/*<button onClick={() => signIn()}>Sign in</button>*/}
-          <button onClick={() => signIn("github")}>Sign in</button>
-        </>
-      )}
-      {session && (
-        <>
-          Signed in as {session.user.email} <br />
-          <button onClick={() => signOut()}>Sign out</button>
-        </>
-      )}
-      </div>
       <ContentCard
         title="Enjoy on your TV."
         subtitle="Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more."
@@ -67,9 +54,8 @@ export default function Home() {
         img={netflixKidsContentImage}
       />
       <h1 className="text-center text-3xl bg-black text-white border-t-8 border-actual-gray sm:p-5  ">
-        <div className="mt-2 p-4 sm:text-4xl text-bold lg:text-5xl">
-          {" "}
-          Frequently Asked Questions{" "}
+        <div className=" p-8 sm:text-4xl text-bold lg:text-5xl">
+          Frequently Asked Questions
         </div>
       </h1>
       <AccordionInfo
@@ -81,7 +67,7 @@ export default function Home() {
       <AccordionInfo faqQuestion="What is Netflix?" faqAnswer="123" />
       <AccordionInfo faqQuestion="What is Netflix?" faqAnswer="123" />
       <AccordionInfo faqQuestion="What is Netflix?" faqAnswer="123" />
-      <div className="mt-8 border-b-8 border-actual-gray">
+      <div className="p-8 border-b-8 border-actual-gray">
         <Register />
       </div>
       <Footer />

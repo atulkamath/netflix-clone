@@ -6,8 +6,8 @@ import { GlobeAltIcon } from "@heroicons/react/outline";
 function Header() {
   return (
     <header className="flex justify-end bg-gradient-to-b from-black">
-      <div className="mr-auto px-1 ml-2 mt-1">
-        <Image src="/netflix-logo.png" height={80} width={120} />
+      <div className="mr-auto px-1 ml-4 mt-1">
+        <Image src="/netflix-3.svg" height={60} width={90} />
       </div>
       <select
         className=" flex text-center text-white bg-gray-900 bg-opacity-80 border border-white w-20 h-8 mt-5 items-center justify-center text-sm"

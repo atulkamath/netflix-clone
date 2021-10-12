@@ -10,10 +10,9 @@ import { PlusIcon } from "@heroicons/react/outline";
 
 const AccordionInfo = (props) => {
   return (
-    
     <div className="flex flex-col text-white bg-black border-actual-gray sm:px-14 lg:justify-center lg:items-center">
       <Accordion
-        allowZeroExpanded
+        allowZeroExpanded={true}
         className=" text-lg bg-actual-gray px-6 py-2 mt-2 lg:w-3/5 lg:text-3xl lg:px-8 lg:py-4 "
       >
         <AccordionItem>
