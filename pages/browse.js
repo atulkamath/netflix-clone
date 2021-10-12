@@ -1,6 +1,5 @@
 import { useSession, signIn, signOut } from "next-auth/client";
 import { Link } from 'next/link';
-import browse from './browse';
 
 const browse = () => {
   const [session, loading] = useSession();
