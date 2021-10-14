@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Link } from "next/link";
 
 const browse = () => {
-  <h1>Browse Page</h1>;
+  return <h1>Browse Page</h1>;
   //   const router = useRouter();
   //   const [session, loading] = useSession();
   //   if (!session) {
