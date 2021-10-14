@@ -37,7 +37,8 @@ const SignInCard = () => {
               className=" w-11/12 h-12 mt-8 mb-4 rounded text-white bg-red-600"
               onClick={() =>
                 signIn("github", {
-                  callbackUrl: "http://localhost:3000/browse",
+                  callbackUrl:
+                    "https://netflix-clone-murex-seven.vercel.app/browse",
                 })
               }
             >
