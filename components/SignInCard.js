@@ -28,11 +28,18 @@ const SignInCard = () => {
           name="text-input"
           placeholder="Password"
         ></input>
+
         {!session && (
           <>
+            Not signed in <br />
+            {/*<button onClick={() => signIn()}>Sign in</button>*/}
             <button
               className=" w-11/12 h-12 mt-8 mb-4 rounded text-white bg-red-600"
-              onClick={() => signIn("github")}
+              onClick={() =>
+                signIn("github", {
+                  callbackUrl: "http://localhost:3000/browse",
+                })
+              }
             >
               Sign in
             </button>

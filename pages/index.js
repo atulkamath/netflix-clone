@@ -62,11 +62,7 @@ export default function Home() {
         faqQuestion="What is Netflix?"
         faqAnswer="Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices."
       />
-      <AccordionInfo faqQuestion="What is Netflix?" faqAnswer="123" />
-      <AccordionInfo faqQuestion="What is Netflix?" faqAnswer="123" />
-      <AccordionInfo faqQuestion="What is Netflix?" faqAnswer="123" />
-      <AccordionInfo faqQuestion="What is Netflix?" faqAnswer="123" />
-      <AccordionInfo faqQuestion="What is Netflix?" faqAnswer="123" />
+
       <div className="p-8 border-b-8 border-actual-gray">
         <Register />
       </div>
