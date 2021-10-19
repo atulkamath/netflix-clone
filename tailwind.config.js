@@ -24,6 +24,7 @@ module.exports = {
       },
       colors: {
         "actual-gray": "#333333",
+        "light-black":"rgba(0,0,0,0.7)"
       },
     },
   },
