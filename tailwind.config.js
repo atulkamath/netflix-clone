@@ -16,6 +16,9 @@ module.exports = {
         "70v": "70vh",
         "80v": "80vh",
       },
+      padding: {
+        "56": "56.25%",
+      },
       width: {
         98: "30rem",
       },
@@ -24,7 +27,7 @@ module.exports = {
       },
       colors: {
         "actual-gray": "#333333",
-        "light-black":"rgba(0,0,0,0.7)"
+        "light-black": "rgba(0,0,0,0.7)",
       },
     },
   },
