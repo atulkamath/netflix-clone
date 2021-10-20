@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const BrowseHeader = () => {
   return (
-    <div className="flex px-6 bg-gradient-to-b from-light-black to-transparent items-center justify-start absolute z-50 w-full">
+    <div className="flex px-4 bg-gradient-to-b from-black via-light-black to-transparent items-center justify-start  z-50 w-screen fixed">
       <div className="flex items-center justify-center mr-auto">
         <Image src="/netflix-3.svg" width={50} height={50} />
         <select
