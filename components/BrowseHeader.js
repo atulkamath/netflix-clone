@@ -17,7 +17,7 @@ const BrowseHeader = () => {
       </div>
       <BellIcon className="mr-5 text-white" width={20} />
 
-      <Image src="/netflix-avatar.png" height={40} width={40} />
+      <Image src="/Netflix-avatar.png" height={40} width={40} />
     </div>
   );
 };
