@@ -24,18 +24,18 @@ const AccordionInfo = (props) => {
     <div className="flex flex-col text-white  sm:px-14 lg:justify-center lg:items-center">
       <Accordion
         allowZeroExpanded
-        className=" text-lg bg-actual-gray lg:w-3/5 lg:text-3xl "
+        className=" text-lg bg-actual-gray lg:w-3/5 lg:text-3xl  "
       >
         {faqData.map((faqData) => (
-          <AccordionItem className="border-b-2 border-black px-2 py-3">
+          <AccordionItem className="border-b-2 border-black px-2 py-3 ">
             <AccordionItemHeading>
-              <AccordionItemButton className="flex mb-2 justify-between items-center lg:px-6 lg:py-1 ">
+              <AccordionItemButton className="flex mb-2 justify-between items-center lg:px-6 lg:py-1 transition duration-500">
                 {faqData.faqQuestion}
                 <PlusIcon className="h-7 w-7 text-gray-300" />
               </AccordionItemButton>
             </AccordionItemHeading>
-            <AccordionItemPanel className="mb-2">
-              <p className="border-t-2 border-black -mx-2 p-6 lg:px-8">
+            <AccordionItemPanel className="mb-2 transition duration-500">
+              <p className="border-t-2 border-black -mx-2 p-6 lg:px-8 ">
                 {faqData.faqAnswer}
               </p>
             </AccordionItemPanel>
