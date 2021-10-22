@@ -1,7 +1,7 @@
 const Register = () => {
   return (
     <div className="flex flex-col text-white text-center justify-center items-center mb-8  ">
-      <h2 className="text-lg mb-1">
+      <h2 className="text-lg mb-1 sm:text-2xl ">
         Ready to watch? Enter your email to create or restart your membership.
       </h2>
       <div className="lg:flex lg:flex-row">

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ContentCard = (props) => {
   return (
-    <div className=" text-white text-center bg-black p-6 border-t-8 border-actual-gray lg:p-14 lg:px-32 lg:flex lg:text-left lg:items-center  lg:even:flex-row-reverse lg:justify-center ">
+    <div className="text-white text-center bg-black p-6 border-t-8 border-actual-gray sm:px-24 lg:p-14 lg:px-32 lg:flex lg:justify-center  lg:items-center lg:text-left  lg:even:flex-row-reverse  ">
       <div>
         <h1 className="font-semibold text-2xl mt-8 sm:text-4xl lg:text-5xl">
           {props.title}
@@ -12,7 +12,7 @@ const ContentCard = (props) => {
         </h2>
       </div>
       <div className="lg:even:mr-24 ">
-        <Image  src={props.img}></Image>
+        <Image src={props.img}></Image>
       </div>
     </div>
   );
