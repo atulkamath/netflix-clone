@@ -34,7 +34,7 @@ const SignInCard = () => {
             Not signed in <br />
             {/*<button onClick={() => signIn()}>Sign in</button>*/}
             <button
-              className=" w-11/12 h-12 mt-8 mb-4 rounded text-white bg-red-600"
+              className=" w-11/12 h-12 mt-8 mb-4 rounded text-white bg-netflix-red"
               onClick={() =>
                 signIn("github", {
                   callbackUrl:

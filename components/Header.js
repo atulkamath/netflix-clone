@@ -20,7 +20,7 @@ function Header() {
       </select>
 
       <Link href="/login">
-        <button className=" flex rounded text-white items-center  bg-red-600 w-20 h-8 p-2 mt-5 ml-6 mr-2 justify-center text-sm">
+        <button className=" flex rounded text-white items-center  bg-netflix-red w-20 h-8 p-2 mt-5 ml-6 mr-2 justify-center text-sm">
           Sign In
         </button>
       </Link>

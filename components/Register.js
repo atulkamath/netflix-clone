@@ -11,7 +11,7 @@ const Register = () => {
           name="text-input"
           placeholder="Email address"
         ></input>
-        <button className=" w-40 h-10 m-5 rounded text-white bg-red-600 lg:w-96 lg:h-14 lg:rounded-none lg:m-0 lg:mt-2 lg:text-2xl">
+        <button className=" w-40 h-10 m-5 rounded text-white bg-netflix-red lg:w-96 lg:h-14 lg:rounded-none lg:m-0 lg:mt-2 lg:text-2xl">
           Get Started &gt;
         </button>
       </div>
