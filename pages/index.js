@@ -1,18 +1,16 @@
-import Image from "next/image";
-
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import ContentCard from "../components/ContentCard";
 import Register from "../components/Register";
 import Footer from "../components/Footer";
+import Accordion from "../components/Accordion";
 
 import tvImage from "../public/tv.png";
-import boxShotImage from "../public/boxshot.png";
 import mobileImage from "../public/mobile.jpeg";
 import devicePileImage from "../public/device-pile.png";
 import netflixKidsContentImage from "../public/netflix-kids-content.png";
+
 import { useSession, signIn, signOut } from "next-auth/client";
-import Accordion from "../components/Accordion";
 
 const faqQuestionArray = [
   {
@@ -79,9 +77,8 @@ const faqQuestionArray = [
 ];
 
 export default function Home() {
-  const [session, loading] = useSession();
   return (
-    <section className="bg-black ">
+    <section className="bg-black">
       <div
         className="bg-cover lg:h-screen  "
         style={{
@@ -102,9 +99,7 @@ export default function Home() {
         title="Download your shows to watch offline."
         subtitle="Save your favorites easily and always have something to watch."
         img={mobileImage}
-      >
-        <Image src={boxShotImage} width="150" height="150" />
-      </ContentCard>
+      />
       <ContentCard
         title="Watch everywhere."
         subtitle="Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more."
@@ -120,10 +115,8 @@ export default function Home() {
           Frequently Asked Questions
         </div>
       </h1>
-
       <Accordion data={faqQuestionArray} />
-
-      <div className="p-8 border-b-8 border-actual-gray">
+      <div className=" p-8 border-b-8 border-actual-gray">
         <Register />
       </div>
       <Footer />
