@@ -44,6 +44,7 @@ module.exports = {
     extend: {
       div: ["even"],
       p: ["even"],
+      div: ["odd"],
     },
   },
   plugins: [],
