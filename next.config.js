@@ -1,6 +1,5 @@
 module.exports = {
   images: {
-    domains: ["upload.wikimedia.org"],
+    domains: ["assets.nflxext.com"],
   },
 };
-
