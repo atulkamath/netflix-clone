@@ -80,7 +80,7 @@ export default function Home() {
   return (
     <section className="bg-black">
       <div
-        className="bg-cover lg:h-screen  "
+        className="bg-cover lg:h-90v "
         style={{
           "background-image":
             "linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url(/banner.jpg)",
@@ -110,13 +110,13 @@ export default function Home() {
         subtitle="Send kids on adventures with their favorite characters in a space made just for them—free with your membership."
         img={netflixKidsContentImage}
       />
-      <h1 className="text-center text-2xl bg-black text-white border-t-8 border-actual-gray px-4  ">
-        <div className=" p-8 md:text-4xl text-bold lg:text-5xl">
+      <h1 className="px-4 text-2xl text-center text-white bg-black border-t-8 border-actual-gray ">
+        <div className="p-8 md:text-4xl text-bold lg:text-5xl">
           Frequently Asked Questions
         </div>
       </h1>
       <Accordion data={faqQuestionArray} />
-      <div className=" p-8 border-b-8 border-actual-gray">
+      <div className="p-8 border-b-8 border-actual-gray">
         <Register />
       </div>
       <Footer />
