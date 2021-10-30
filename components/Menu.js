@@ -28,7 +28,10 @@ const Menu = () => {
                 href={`/api/auth/signout`}
                 onClick={(e) => {
                   e.preventDefault();
-                  signOut();
+                  signOut({
+                    callbackUrl:
+                      "https://netflix-clone-murex-seven.vercel.app/",
+                  });
                 }}
               >
                 Sign out of Netflix
