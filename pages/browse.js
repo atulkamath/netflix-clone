@@ -42,7 +42,6 @@ const browse = () => {
   // If session exists, display content
   return (
     <div>
-      <strong>{content || "\u00a0"}</strong>
       <BrowseHeader />
       <BrowseHero />
     </div>
