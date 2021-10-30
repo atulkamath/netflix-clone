@@ -41,7 +41,16 @@ const BrowseHeader = () => {
             : "  fixed z-40 flex items-center justify-start w-screen px-4 bg-gradient-to-b from-black via-light-black to-transparent lg:block"
         }
       >
-        <div className="flex items-center px-4 mr-auto text-white">
+        <div className="flex items-center justify-center px-4 mr-auto text-white">
+        <MenuIcon
+              width={40}
+              height={30}
+              color="white"
+              className="mr-6 lg:hidden"
+              onClick={() => {
+                !menu ? setMenu(true) : setMenu(false);
+              }}
+            />
           <Image src="/netflix-3.svg" width={80} height={60} />
           <ul className="hidden ml-12 space-x-6 lg:block">
             <li className="inline">
@@ -65,20 +74,12 @@ const BrowseHeader = () => {
           </ul>
           <div className="ml-auto space-x-6 lg:items-center lg:justify-center lg:flex">
             <SearchIcon className="hidden text-white lg:inline " width={20} />
-            <li className="inline">
+            <li className="hidden lg:inline">
               <a href="#">Kids</a>
             </li>
-            <MenuIcon
-              width={40}
-              height={30}
-              color="white"
-              className="mr-2 sm:hidden"
-              onClick={() => {
-                !menu ? setMenu(true) : setMenu(false);
-              }}
-            />
+   
             <BellIcon className="hidden text-white lg:inline " width={20} />
-            <Menu as="div" className="relative inline-block text-left">
+            <Menu as="div" className="relative hidden text-left lg:inline-block">
               <div>
                 <Menu.Button className="flex items-center justify-center">
                   <img
