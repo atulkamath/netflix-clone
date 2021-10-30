@@ -47,6 +47,7 @@ module.exports = {
       div: ["even"],
       p: ["even"],
       div: ["odd"],
+      borderWidth: ['hover', 'focus'],
     },
   },
   plugins: [],
