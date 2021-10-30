@@ -1,55 +1,162 @@
-import { BellIcon, MenuIcon, SearchIcon } from "@heroicons/react/solid";
-import Image from "next/image";
+import {
+  BellIcon,
+  MenuIcon,
+  SearchIcon,
+  ChevronDownIcon,
+} from "@heroicons/react/solid";
+
+import { Menu, Transition } from "@headlessui/react";
+import { Fragment } from "react";
 import { useState } from "react";
+import { signOut, useSession } from "next-auth/client";
+
+import Image from "next/image";
+
+import NetflixMenu from "./Menu";
 import SearchBar from "./SearchBar";
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
 const BrowseHeader = () => {
+  const [session] = useSession();
   const [navbar, setNavbar] = useState("");
   const [menu, setMenu] = useState(false);
+
   const changeNavBackground = () => {
     if (window.scrollY >= 50) {
       setNavbar(true);
     } else setNavbar(false);
   };
+
   window.addEventListener("scroll", changeNavBackground);
+
   return (
-    <nav className={menu}>
+    <nav>
       <div
         className={
           navbar
-            ? " fixed z-40 flex items-center justify-start w-screen px-4 bg-gradient-to-b from-black via-black to-black transition-none duration-1000 ease-linear"
-            : "fixed z-40 flex items-center justify-start w-screen px-4 bg-gradient-to-b from-black via-light-black to-transparent"
+            ? "  fixed z-40 flex items-center justify-start w-screen px-4 bg-gradient-to-b from-black via-black to-black transition-none duration-1000 ease-linear lg:block"
+            : "  fixed z-40 flex items-center justify-start w-screen px-4 bg-gradient-to-b from-black via-light-black to-transparent lg:block"
         }
       >
-        <div className="flex items-center justify-center mr-auto">
-          <div className="flex items-center justify-center ">
+        <div className="flex items-center px-4 mr-auto text-white">
+          <Image src="/netflix-3.svg" width={80} height={60} />
+          <ul className="hidden ml-12 space-x-6 lg:block">
+            <li className="inline">
+              <a href="#">Home</a>
+            </li>
+            <li className="inline">
+              <a href="#">Watch Again</a>
+            </li>
+            <li className="inline">
+              <a href="#"> TV Shows</a>
+            </li>
+            <li className="inline">
+              <a href="#">Movies</a>
+            </li>
+            <li className="inline">
+              <a href="#">New & Popular</a>
+            </li>
+            <li className="inline">
+              <a href="#">My List</a>
+            </li>
+          </ul>
+          <div className="ml-auto space-x-6 lg:items-center lg:justify-center lg:flex">
+            <SearchIcon className="hidden text-white lg:inline " width={20} />
+            <li className="inline">
+              <a href="#">Kids</a>
+            </li>
             <MenuIcon
               width={40}
               height={30}
               color="white"
-              className="mr-2"
-              onClick={() =>
-                !menu
-                  ? setMenu("absolute z-50 flex w-3/5 h-screen bg-black")
-                  : setMenu("")
-              }
+              className="mr-2 sm:hidden"
+              onClick={() => {
+                !menu ? setMenu(true) : setMenu(false);
+              }}
             />
-
-            <Image src="/netflix-3.svg" width={80} height={60} />
-
-            {/* <select
-          className="flex items-center justify-center ml-2 text-xs text-center text-white bg-transparent cursor-pointer "
-          name="language"
-          id="language"
-        >
-          <option value="english">Browse</option>
-          <option value="arabic">Tv Shows</option>
-        </select> */}
+            <BellIcon className="hidden text-white lg:inline " width={20} />
+            <Menu as="div" className="relative inline-block text-left">
+              <div>
+                <Menu.Button className="flex items-center justify-center">
+                  <img
+                    className="hidden w-10 h-10 bg-cover lg:block "
+                    style={{ backgroundImage: `url(${session.user.image})` }}
+                  />
+                  <ChevronDownIcon
+                    className="w-5 h-5 ml-2 "
+                    aria-hidden="true"
+                  />
+                </Menu.Button>
+              </div>
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right rounded-md shadow-lg bg-[#000000d0] ring-1 ring-black focus:outline-none">
+                  <div className="py-1">
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          href="#"
+                          className={classNames(
+                            active ? "bg-black text-white" : "text-white",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Account
+                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          href="#"
+                          className={classNames(
+                            active ? "bg-black text-white" : "text-white",
+                            "block px-4 py-2 text-sm"
+                          )}
+                        >
+                          Help Center
+                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          href={`/api/auth/signout`}
+                          className={classNames(
+                            active ? "bg-black text-white" : "text-white",
+                            "block px-4 py-2 text-sm"
+                          )}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            signOut({
+                              callbackUrl:
+                                "https://netflix-clone-murex-seven.vercel.app/",
+                            });
+                          }}
+                        >
+                          Sign out
+                        </a>
+                      )}
+                    </Menu.Item>
+                  </div>
+                </Menu.Items>
+              </Transition>
+            </Menu>
           </div>
-          <SearchBar />
-          {/* <BellIcon className="mr-5 text-white" width={20} />
-      <Image src="/Netflix-avatar.png" height={40} width={40} /> */}
         </div>
+        <SearchBar />
       </div>
+      {menu ? <NetflixMenu /> : <></>}
     </nav>
   );
 };
