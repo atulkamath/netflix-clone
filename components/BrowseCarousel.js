@@ -12,7 +12,7 @@ const BrowseCarousel = (props) => {
 
   useEffect(() => {
     axios(
-      `https://api.themoviedb.org/3/${props.slug}?api_key=4fde364e3c1e773fe97ab43acc0a1e1f`
+      `https://api.themoviedb.org/3/${props.slug}?api_key=`
     )
       .then((response) => {
         setMyList(response.data.results);
