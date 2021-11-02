@@ -24,6 +24,19 @@ const BrowseHero = () => {
         height="100%"
         volume={1}
       />
+      <div className="hidden w-1/2 p-12 lg:top-1/4 lg:block lg:absolute">
+        <Image
+          src="https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABfp5_exPnNUZnDZIPJsnSttBiba9tCC2-056d6YlKtS0ntsLFE4Wi2hd_fZXsbO_jXoztbMNX63wldZmThL1W6HDTyrB2PmtEO41ftM-A7sTZOzqPEqIXKKcNZ12_z6rNQTXuIMn-SY5aP80ByhYYeq-nXMSFcGyJntaHJDtm2iTCg.png?r=7c3"
+          height={150}
+          width={600}
+        />
+        <h3 className="mt-4 mb-4 text-2xl text-white drop-shadow-3xl">
+          #4 in the United Arab Emirates Today
+        </h3>
+        <h3 className="text-xl text-white drop-shadow-3xl">
+          People Rob a bank. In Hd.
+        </h3>
+      </div>
       <div className="py-16 bg-black ">
         <BrowseCarousel title={"My List"} slug="movie/popular" />
         <BrowseCarousel title={"Popular on Netflix"} slug="tv/popular" />
