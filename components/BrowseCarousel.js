@@ -6,9 +6,10 @@ import "react-multi-carousel/lib/styles.css";
 const BrowseCarousel = (props) => {
   const axios = require("axios");
   const [myList, setMyList] = useState(null);
+  const [netflixImage, setNetflixImage] = useState(null);
   useEffect(() => {
     axios(
-      `https://api.themoviedb.org/3/${props.slug}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+      `https://api.themoviedb.org/3/${props.slug}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US&append_to_response=images&include_image_language=en,null`
     )
       .then((response) => {
         setMyList(response.data.results);
@@ -17,6 +18,7 @@ const BrowseCarousel = (props) => {
         console.log(error);
       });
   }, []);
+
   if (!myList) {
     return null;
   }
@@ -25,11 +27,13 @@ const BrowseCarousel = (props) => {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      items: 8,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 7,
+      items: 6,
+      slidesToSlide: 7,
+      partialVisibilityGutter: 50,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -44,27 +48,30 @@ const BrowseCarousel = (props) => {
   };
 
   return (
-    <div className="text-white ">
-      <h2 className="pb-2 text-xl font-semibold text-gray-400 px-7">
+    <div className="sm:pt-8 ">
+      <h2 className="pb-2 text-xl font-semibold text-gray-400 drop-shadow-4xl lg:text-white px-7">
         {props.title}
       </h2>
 
       <Carousel
         partialVisible={true}
-        className="px-6 pb-4"
-        draggable
-        swipeable
-        removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
+        className="px-5 pb-4 "
+        removeArrowOnDeviceType={["tablet", "mobile"]}
         responsive={responsive}
         containerClass="carousel-container"
       >
         {myList.map(function (data, id) {
           return (
-            <div key={id} className="px-1">
+            <div
+              key={id}
+              className="px-2 transition duration-100 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+            >
               <Image
+                className="rounded-sm"
                 src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-                width={190}
-                height={110}
+                width={120}
+                height={170}
+                layout="responsive"
               />
             </div>
           );

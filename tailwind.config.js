@@ -8,6 +8,7 @@ module.exports = {
       dropShadow: {
         "4xl": "1px 1px 30px rgba(0, 0, 0,1)",
         "3xl": "1px 1px 8px rgba(0, 0, 0,1)",
+        "5xl": "1px 2px 10px rgba(0, 0, 0,1)",
       },
       maxWidth: {
         "1/4": "25%",
