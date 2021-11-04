@@ -6,7 +6,7 @@ import "react-multi-carousel/lib/styles.css";
 const BrowseCarousel = (props) => {
   const axios = require("axios");
   const [myList, setMyList] = useState(null);
-  const [netflixImage, setNetflixImage] = useState(null);
+
   useEffect(() => {
     axios(
       `https://api.themoviedb.org/3/${props.slug}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US&append_to_response=images&include_image_language=en,null`
@@ -18,11 +18,9 @@ const BrowseCarousel = (props) => {
         console.log(error);
       });
   }, []);
-
   if (!myList) {
     return null;
   }
-
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -46,13 +44,11 @@ const BrowseCarousel = (props) => {
       partialVisibilityGutter: 25,
     },
   };
-
   return (
     <div className="sm:pt-8 ">
       <h2 className="pb-2 text-xl font-semibold text-gray-400 drop-shadow-4xl lg:text-white px-7">
         {props.title}
       </h2>
-
       <Carousel
         partialVisible={true}
         className="px-5 pb-4 "
@@ -64,10 +60,10 @@ const BrowseCarousel = (props) => {
           return (
             <div
               key={id}
-              className="px-2 transition duration-100 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+              className="px-2 transition duration-300 ease-in-out cursor-pointer hover:scale-110"
             >
               <Image
-                className="rounded-sm"
+                className="rounded-md"
                 src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                 width={120}
                 height={170}
@@ -80,5 +76,4 @@ const BrowseCarousel = (props) => {
     </div>
   );
 };
-
 export default BrowseCarousel;
