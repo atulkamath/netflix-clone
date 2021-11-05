@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Link from "next/link";
 
 const BrowseCarousel = (props) => {
   const axios = require("axios");
@@ -58,18 +59,20 @@ const BrowseCarousel = (props) => {
       >
         {myList.map(function (data, id) {
           return (
-            <div
-              key={id}
-              className="px-2 transition duration-300 ease-in-out cursor-pointer hover:scale-110"
-            >
-              <Image
-                className="rounded-md"
-                src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-                width={120}
-                height={170}
-                layout="responsive"
-              />
-            </div>
+            <Link href={"/details/" + data.id}>
+              <div
+                key={id}
+                className="px-2 transition duration-300 ease-in-out cursor-pointer hover:scale-110"
+              >
+                <Image
+                  className="rounded-md"
+                  src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                  width={120}
+                  height={170}
+                  layout="responsive"
+                />
+              </div>
+            </Link>
           );
         })}
       </Carousel>
