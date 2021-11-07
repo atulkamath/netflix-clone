@@ -53,12 +53,13 @@ const Details = (props) => {
   return (
     <div className="w-full h-screen text-white bg-black ">
       <div className="relative z-50 h-1/4 sm:h-1/3 lg:h-2/3">
-        <BrowseHeader />
         <button
-          className="absolute z-50"
+          className="absolute z-50 sm:p-4"
           type="button"
           onClick={() => router.back()}
-        ></button>
+        >
+          <ChevronLeftIcon className="w-8 h-8" />
+        </button>
 
         <Image
           className="relative z-30 mt-8 "
@@ -97,7 +98,7 @@ const Details = (props) => {
         <ul className="inline text-sm whitespace-nowrap sm:text-lg">
           <span className="text-gray-400">Starring:&nbsp;</span>
           {cast.cast.slice(0, 2).map((item) => (
-            <li className="inline " key={item.id}>
+            <li className="inline whitespace-normal " key={item.id}>
               {item.name},&nbsp;
             </li>
           ))}

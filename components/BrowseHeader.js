@@ -37,12 +37,12 @@ const BrowseHeader = () => {
             : "  fixed z-40 flex items-center justify-start w-screen px-4 bg-gradient-to-b from-black via-light-black to-transparent lg:block"
         }
       >
-        <div className="flex items-center justify-center px-4 mr-auto text-white">
+        <div className="flex items-center justify-center mr-auto text-white">
           <MenuIcon
-            width={40}
+            width={30}
             height={30}
             color="white"
-            className="mr-6 lg:hidden"
+            className="mr-2 lg:hidden"
             onClick={() => {
               !menu ? setMenu(true) : setMenu(false);
             }}
