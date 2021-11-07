@@ -62,10 +62,10 @@ const BrowseHero = () => {
         </div>
       </div>
       <div className="py-16 bg-black lg:-mt-48 lg:py-0 opacity-55">
-        <BrowseCarousel title={"My List"} slug="movie/popular" />
-        <BrowseCarousel title={"Popular on Netflix"} slug="tv/popular" />
-        <BrowseCarousel title={"Trending Now"} slug="trending/all/day" />
-        <BrowseCarousel title={"Top Rated Tv"} slug="tv/top_rated" />
+        <BrowseCarousel title={"Popular on Netflix"} slug="movie/popular" />
+        <BrowseCarousel title={"Top Rated"} slug="movie/top_rated" />
+        <BrowseCarousel title={"Upcoming Movies"} slug="movie/upcoming" />
+        <BrowseCarousel title={"Latest"} slug="tv/popular" />
       </div>
     </div>
   );
