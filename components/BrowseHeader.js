@@ -50,7 +50,7 @@ const BrowseHeader = () => {
           <Image src="/netflix-3.svg" width={80} height={60} />
           <ul className="hidden ml-12 space-x-6 lg:block">
             <li className="inline">
-              <a href="#">Home</a>
+              <a href="/browse">Home</a>
             </li>
             <li className="inline">
               <a href="#">Watch Again</a>

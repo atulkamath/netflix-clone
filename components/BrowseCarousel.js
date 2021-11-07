@@ -3,16 +3,19 @@ import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const BrowseCarousel = (props) => {
   const axios = require("axios");
   const [myList, setMyList] = useState(null);
+  const { asPath } = useRouter();
 
   useEffect(() => {
     axios(
       `https://api.themoviedb.org/3/${props.slug}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US&append_to_response=images&include_image_language=en,null`
     )
       .then((response) => {
+        // console.log(response.data.results);
         setMyList(response.data.results);
       })
       .catch(function (error) {
@@ -59,7 +62,7 @@ const BrowseCarousel = (props) => {
       >
         {myList.map(function (data, id) {
           return (
-            <Link href={"/details/" + data.id}>
+            <Link href={"/details/" + data.id + "/" + props.slug}>
               <div
                 key={id}
                 className="px-2 transition duration-300 ease-in-out cursor-pointer hover:scale-110"
