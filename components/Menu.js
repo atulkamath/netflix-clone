@@ -40,7 +40,7 @@ const Menu = () => {
           </ul>
         </div>
       </div>
-      <div className="px-6 mt-2 text-lg font-semibold sm:text-base ">
+      <div className="h-screen px-6 mt-2 text-lg font-semibold bg-black  sm:text-base">
         <ul className="space-y-2 ">
           <li className="">
             <a href="#">Home</a>
