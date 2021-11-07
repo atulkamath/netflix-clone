@@ -52,14 +52,16 @@ const Details = (props) => {
   }
   return (
     <div className="w-full h-screen text-white bg-black ">
-      <div className="relative z-50 sm:h-2/3">
+      <div className="relative z-50 h-1/4 sm:h-1/3 lg:h-2/3">
         <BrowseHeader />
         <button
           className="absolute z-50"
           type="button"
           onClick={() => router.back()}
         ></button>
+
         <Image
+          className="relative z-30 mt-8 "
           src={`https://image.tmdb.org/t/p/original${myList.backdrop_path}`}
           layout="fill"
         />
