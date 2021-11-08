@@ -65,7 +65,7 @@ const BrowseCarousel = (props) => {
             <Link href={"/details/" + data.id + "/" + props.slug}>
               <div
                 key={id}
-                className="px-2 transition duration-300 ease-in-out cursor-pointer hover:scale-110"
+                className="px-2 transition duration-300 ease-in-out cursor-pointer lg:hover:scale-110"
               >
                 <Image
                   className="rounded-md"

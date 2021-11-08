@@ -116,7 +116,7 @@ const Details = (props) => {
             >
               <div
                 key={id}
-                className="pr-4 transition duration-300 ease-in-out cursor-pointer md:p-6 lg:-ml-6 hover:scale-110"
+                className="pr-4 transition duration-300 ease-in-out cursor-pointer md:p-6 lg:-ml-6 lg:hover:scale-110"
               >
                 <div key={item.id}>
                   <Image
