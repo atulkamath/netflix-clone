@@ -13,7 +13,7 @@ const BrowseHero = () => {
   const [mute, setMute] = useState(null);
   const toggle = () => setMute(!mute);
   return (
-    <div className="fixed w-full h-screen overflow-x-hidden overscroll-contain lg:block ">
+    <div className="fixed w-full h-screen overflow-x-hidden overscroll-none lg:block ">
       <div className="absolute z-0 w-screen h-screen bg-black opacity-10 " />
       <ReactVideo
         className="hidden lg:block"
