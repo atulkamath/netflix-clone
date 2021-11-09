@@ -94,7 +94,7 @@ const Details = (props) => {
         </div>
       </div>
       <div className="pl-6 bg-black lg:px-24">
-        <h2 className="my-4 lg:w-3/4">{myList.overview}</h2>
+        <h2 className="mt-2 mb-4 lg:w-3/4">{myList.overview}</h2>
         <ul className="inline text-sm whitespace-nowrap sm:text-lg">
           <span className="text-gray-400">Starring:&nbsp;</span>
           {cast.cast.slice(0, 2).map((item) => (
@@ -102,7 +102,7 @@ const Details = (props) => {
               {item.name},&nbsp;
             </li>
           ))}
-          <h3 className="w-11/12 py-4 mt-4 text-gray-300 border-t border-b border-actual-gray md:flex md:items-center md:justify-center">
+          <h3 className="w-11/12 py-4 mt-4 text-gray-300 border-t border-b lg:w-full border-actual-gray md:flex md:items-center md:justify-center">
             {myList.tagline}
           </h3>
         </ul>
@@ -116,7 +116,7 @@ const Details = (props) => {
             >
               <div
                 key={id}
-                className="pr-4 transition duration-300 ease-in-out cursor-pointer md:p-6 lg:-ml-6 hover:scale-110"
+                className="pr-4 transition duration-300 ease-in-out cursor-pointer md:p-6 lg:-ml-6 lg:hover:scale-110"
               >
                 <div key={item.id}>
                   <Image
