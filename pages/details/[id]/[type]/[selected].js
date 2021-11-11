@@ -52,7 +52,7 @@ const Details = (props) => {
   }
   return (
     <div className="w-full h-screen text-white bg-black ">
-      <div className="relative z-50 h-1/4 sm:h-1/3 lg:h-2/3">
+      <div className="relative z-50 h-1/4 sm:h-1/3 lg:h-3/4">
         <button
           className="absolute z-50 sm:p-4"
           type="button"
@@ -60,12 +60,13 @@ const Details = (props) => {
         >
           <ChevronLeftIcon className="w-8 h-8" />
         </button>
-
-        <Image
-          className="relative z-30 mt-8 "
-          src={`https://image.tmdb.org/t/p/original${myList.backdrop_path}`}
-          layout="fill"
-        />
+        {
+          <Image
+            className="relative z-30 mt-8 "
+            src={`https://image.tmdb.org/t/p/original${myList.backdrop_path}`}
+            layout="fill"
+          />
+        }
       </div>
       <div className="p-6 font-light text-white lg:px-24 ">
         <h1 className="my-4 font-bold sm:text-lg lg:text-xl">
@@ -122,8 +123,8 @@ const Details = (props) => {
                   <Image
                     className="rounded-md "
                     src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                    width={50}
-                    height={50}
+                    width={29}
+                    height={40}
                     layout="responsive"
                   />
                 </div>

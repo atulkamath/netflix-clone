@@ -10,10 +10,19 @@ module.exports = {
         "3xl": "1px 1px 8px rgba(0, 0, 0,1)",
         "5xl": "1px 2px 10px rgba(0, 0, 0,1)",
       },
+      translate: {
+        "4/7": "-1300px",
+        "5/7": "-2000px",
+        "6/7": "-2200px",
+      },
       maxWidth: {
         "1/4": "25%",
         "1/2": "50%",
         "3/4": "75%",
+      },
+
+      webKitScrollBar: {
+        display: "none",
       },
 
       backgroundImage: {
