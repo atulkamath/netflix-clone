@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import BrowseHeader from "../components/BrowseHeader";
 import BrowseHero from "../components/BrowseHero";
-
-const browse = () => {
+import axios from "axios";
+import getMovieApi from "../src/api/getMovieApi";
+import BrowseCarousel from "../components/BrowseCarousel";
+const browse = ({ data }) => {
   const [session, loading] = useSession();
   const [content, setContent] = useState();
 
@@ -43,9 +45,42 @@ const browse = () => {
   return (
     <div>
       <BrowseHeader />
-      <BrowseHero />
+      <BrowseHero>
+        <BrowseCarousel
+          title={"Popular on Netflix"}
+          movies={data.popular}
+          slug="movie/popular"
+        />
+        <BrowseCarousel
+          title={"Top Rated"}
+          movies={data.top_rated}
+          slug="movie/top_rated"
+        />
+        <BrowseCarousel
+          title={"Upcoming Movies"}
+          movies={data.upcoming}
+          slug="movie/upcoming"
+        />
+        <BrowseCarousel title={"Latest"} movies={data.tv} slug="tv/popular" />
+      </BrowseHero>
     </div>
   );
 };
+export const getStaticProps = async () => {
+  const popular = await getMovieApi("movie/popular");
+  const top_rated = await getMovieApi("movie/top_rated");
+  const upcoming = await getMovieApi("movie/upcoming");
+  const tv = await getMovieApi("tv/popular");
 
+  return {
+    props: {
+      data: {
+        popular,
+        top_rated,
+        upcoming,
+        tv,
+      },
+    },
+  };
+};
 export default browse;

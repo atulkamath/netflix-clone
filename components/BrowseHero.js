@@ -9,11 +9,12 @@ import React, { useState } from "react";
 import BrowseCarousel from "./BrowseCarousel";
 import ReactVideo from "./ReactVideo";
 
-const BrowseHero = () => {
+const BrowseHero = ({ children }) => {
   const [mute, setMute] = useState(null);
   const toggle = () => setMute(!mute);
   return (
-    <div className="fixed w-full h-screen overflow-x-hidden overscroll-none lg:block ">
+    <div className="fixed w-full h-screen overflow-x-hidden overflow-y-scroll bg-black overscroll-none lg:block">
+      {/* <div className="fixed w-full h-screen overflow-x-hidden overscroll-none lg:block "> */}
       <div className="absolute z-0 w-screen h-screen bg-black opacity-10 " />
       <ReactVideo
         className="hidden lg:block"
@@ -62,10 +63,7 @@ const BrowseHero = () => {
         </div>
       </div>
       <div className="py-16 bg-black lg:-mt-48 lg:py-0 opacity-55">
-        <BrowseCarousel title={"Popular on Netflix"} slug="movie/popular" />
-        <BrowseCarousel title={"Top Rated"} slug="movie/top_rated" />
-        <BrowseCarousel title={"Upcoming Movies"} slug="movie/upcoming" />
-        <BrowseCarousel title={"Latest"} slug="tv/popular" />
+        {children}
       </div>
     </div>
   );
