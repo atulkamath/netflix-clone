@@ -1,26 +1,12 @@
-import { useSession, signIn, signOut, getSession } from "next-auth/client";
-import { useEffect, useState } from "react";
-
+import { useSession } from "next-auth/client";
 import Link from "next/link";
+import BrowseCarousel from "../components/BrowseCarousel";
 import BrowseHeader from "../components/BrowseHeader";
 import BrowseHero from "../components/BrowseHero";
-import axios from "axios";
 import getMovieApi from "../src/api/getMovieApi";
-import BrowseCarousel from "../components/BrowseCarousel";
+
 const browse = ({ data }) => {
   const [session, loading] = useSession();
-  const [content, setContent] = useState();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("/api/protected");
-      const json = await res.json();
-      if (json.content) {
-        setContent(json.content);
-      }
-    };
-    fetchData();
-  }, [session]);
 
   // When rendering client side don't display anything until loading is complete
   if (typeof window !== "undefined" && loading) return null;
@@ -40,7 +26,6 @@ const browse = ({ data }) => {
       </>
     );
   }
-
   // If session exists, display content
   return (
     <div>
@@ -66,6 +51,7 @@ const browse = ({ data }) => {
     </div>
   );
 };
+
 export const getStaticProps = async () => {
   const popular = await getMovieApi("movie/popular");
   const top_rated = await getMovieApi("movie/top_rated");
