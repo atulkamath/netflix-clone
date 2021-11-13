@@ -25,17 +25,17 @@ const BrowseCarousel = ({ movies = [], title, slug }) => {
   }
 
   return (
-    <div className="lg:overscroll-none lg:overflow-hidden ">
+    <div className="lg:overscroll-none overscroll-y-auto lg:overflow-hidden ">
       <h2 className="flex-none text-xl font-semibold text-gray-400 drop-shadow-4xl lg:text-white px-7 ">
         {title}
       </h2>
-      <div className="flex p-5 overflow-x-scroll overscroll-y-auto hide-scroll-bar ">
-        <div className="absolute z-50 mt-24 text-white left-2">
+      <div className="flex p-5 overflow-scroll overscroll-y-auto hide-scroll-bar ">
+        <div className="absolute z-50 hidden mt-24 text-white lg:block left-2">
           <button onClick={handleBackClick}>
             <ChevronLeftIcon className="w-10 h-10 transition duration-200 ease-in-out transform rounded-full hover:-translate-y-1 hover:scale-125 bg-light-black" />
           </button>
         </div>
-        <div className="absolute z-50 mt-24 text-white right-8">
+        <div className="absolute z-50 hidden mt-24 text-white lg:block right-8">
           <button onClick={handleRightClick}>
             <ChevronRightIcon className="w-10 h-10 transition duration-200 ease-in-out transform rounded-full hover:-translate-y-1 hover:scale-125 bg-light-black" />
           </button>
