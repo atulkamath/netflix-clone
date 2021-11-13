@@ -5,8 +5,9 @@ module.exports = {
       "occ-0-2794-2219.1.nflxso.net",
       "image.tmdb.org",
       "api.themoviedb.org",
-      "nofilmschool.com",
+      "cdn.worldvectorlogo.com",
       "miro.medium.com",
+      "images.unsplash.com",
     ],
   },
   env: {

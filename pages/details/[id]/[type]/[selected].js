@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import BrowseHeader from "../../../../components/BrowseHeader";
-const Details = (props) => {
+
+const Details = () => {
   const router = useRouter();
   const [myList, setMyList] = useState(null);
   const [cast, setCast] = useState(null);
@@ -60,13 +60,23 @@ const Details = (props) => {
         >
           <ChevronLeftIcon className="w-8 h-8" />
         </button>
-        {
+        {myList.backdrop_path === null ? (
+          <div className="py-52">
+            <Image
+              className=""
+              src={"https://cdn.worldvectorlogo.com/logos/netflix-3.svg"}
+              layout="responsive"
+              width="70"
+              height="5"
+            />
+          </div>
+        ) : (
           <Image
             className="relative z-30 mt-8 "
             src={`https://image.tmdb.org/t/p/original${myList.backdrop_path}`}
             layout="fill"
           />
-        }
+        )}
       </div>
       <div className="p-6 font-light text-white lg:px-24 ">
         <h1 className="my-4 font-bold sm:text-lg lg:text-xl">
@@ -79,9 +89,6 @@ const Details = (props) => {
                 ? myList.first_air_date.substring(0, 4)
                 : myList.release_date.substring(0, 4)}
             </li>
-            {/* <li className="p-1 border">
-              {myList.release_dates.results[0].release_dates[0].certification}
-            </li> */}
             <li className="px-2 border-r ">
               {myList.runtime === undefined
                 ? myList.episode_run_time[0]

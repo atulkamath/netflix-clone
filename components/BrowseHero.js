@@ -6,15 +6,14 @@ import {
 } from "@heroicons/react/solid";
 import Image from "next/image";
 import React, { useState } from "react";
-import BrowseCarousel from "./BrowseCarousel";
 import ReactVideo from "./ReactVideo";
 
 const BrowseHero = ({ children }) => {
   const [mute, setMute] = useState(null);
   const toggle = () => setMute(!mute);
+
   return (
     <div className="fixed w-full h-screen overflow-x-hidden overflow-y-scroll bg-black overscroll-none lg:block">
-      {/* <div className="fixed w-full h-screen overflow-x-hidden overscroll-none lg:block "> */}
       <div className="absolute z-0 w-screen h-screen bg-black opacity-10 " />
       <ReactVideo
         className="hidden lg:block"
