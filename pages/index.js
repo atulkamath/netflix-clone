@@ -91,7 +91,7 @@ export default function Home() {
       </div>
 
       <ContentCard
-        title="Enjoy on your TV."
+        title="Enjoy on your TV123."
         subtitle="Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more."
         img={tvImage}
       />
