@@ -7,7 +7,6 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
 const BrowseCarousel = ({ movies = [], title, slug }) => {
   const startRef = useRef();
   const endRef = useRef();
-
   function handleBackClick() {
     startRef.current.scrollIntoView({
       behavior: "smooth",
