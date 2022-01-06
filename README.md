@@ -1,3 +1,7 @@
+# How To Install
+1. Clone the repository
+2. Run yarn
+3. yarn run dev
 
 # Next.js + Tailwind CSS Example
 
